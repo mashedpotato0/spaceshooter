@@ -1,32 +1,55 @@
 # Space Shooter Game
 
-This is a simple Space Shooter Game implemented in Python using tkinter for the GUI.
+A grid-based space shooter game written in Python using Tkinter for the GUI and NumPy for the game state grid.
 
 ## Status
 
-**Incomplete**: This project is still a work in progress. The current version provides basic functionality but lacks some features to make the GUI more playable and visually appealing.
+> ⚠️ **Work in Progress** — Core mechanics are functional but the game is still being developed.
 
-## Features Implemented
+## Features
 
-- Player movement (left, right, up, down)
-- Player shooting (normal bullets)
-- Enemy spawning and movement
-- Collision detection for bullets hitting enemies
-- Power-up dropping (with 10% chance)
-- Basic game over condition
+- **Player movement** — Arrow keys or WASD to move in all four directions on a 16×16 grid
+- **Shooting** — Press Space to fire bullets upward
+- **Enemies** — Spawn randomly at the top and descend; two types: `weak` (1 HP) and `strong` (2 HP)
+- **Collision detection** — Bullets reduce enemy HP; enemies that reach the player deal damage
+- **Power-ups** — 10% drop chance from destroyed enemies (currently collected but not yet active)
+- **Player health** — 3 HP; game ends at 0
 
-## To-Do
+## Grid Cell Codes
 
-- Implement different types of enemies with varying behaviors
-- Enhance player interaction with power-ups
-- Improve GUI layout and responsiveness
-- Add sound effects and background music
-- Implement scoring system and level progression
-- Refactor code for better readability and maintainability
+| Value | Entity |
+|---|---|
+| 0 | Empty |
+| 1 | Player (white) |
+| 2 | Enemy (red) |
+| 3 | Bullet (yellow) |
+| 4 | Power-up (blue) |
 
-## Usage
+## Requirements
 
-To run the game, make sure you have Python installed. Then, execute the following command:
+```bash
+pip install numpy
+```
+
+Tkinter is included with standard Python installations.
+
+## Run
 
 ```bash
 python main.py
+```
+
+## Controls
+
+| Key | Action |
+|---|---|
+| Arrow Keys / WASD | Move player |
+| Space | Shoot |
+
+## Planned Features
+
+- Different enemy behaviours
+- Active power-up effects
+- Scoring system and level progression
+- Sound effects and background music
+- Improved visual design
